@@ -175,8 +175,7 @@
         <blockquote>
 <p>原文发表：2017-02-01</p>
 </blockquote>
-<p>我为什么使用<strong>jpress（jfinal）</strong>而不使用<strong>wordpress（php）</strong>。</p>
-<p>wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。<br>思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了。<br><a href="https://github.com/JpressProjects/jpress" target="_blank" rel="external">jpress github</a></p>
+<p>我为什么使用<strong>jpress（jfinal）</strong>而不使用<strong>wordpress（php）</strong>。<br>wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。<br>思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了。<br><a href="https://github.com/JpressProjects/jpress" target="_blank" rel="external">jpress github</a><br></p>
 <blockquote>
 <p>JPress，一个wordpress的java代替版本，使用JFinal开发。支持类似wordpress的几乎所有功能，比如：模板，插件等。同时在模板上，JPress提出了“模板即模型”的概念，方便模板制作人灵活制作业务模型，移除了widget等繁杂功能，同时在模板和插件制作上比wordpress更加灵活简洁。</p>
 </blockquote>
@@ -186,8 +185,7 @@
 <li>mysql（mariadb）</li>
 <li>jdk</li>
 </ul>
-<p>基于平台centos7.2</p>
-<p>1.数据库，安装MariaDB<br>安装命令</p>
+<p>基于平台centos7.2<br><strong>1.数据库，安装MariaDB</strong><br>安装命令</p>
 <blockquote>
 <p>yum -y install mariadb mariadb-server</p>
 </blockquote>
@@ -222,22 +220,18 @@
 <blockquote>
 <p>mysql -uroot -p你的密码<br>完成。</p>
 </blockquote>
-<p>2.安装jdk</p>
-<p>如果自身有openjdk（试过能启动tomcat啊）那就省事了。</p>
-<p>基于服务器系统没有任何jdk和jre前提下，官网下载对应的jdk</p>
-<p>网上很多做法卸载open jdk安装oracle jdk</p>
-<p>本地下载或者服务器wget后通过</p>
+<p><strong>2.安装jdk</strong></p>
+<p>如果自身有openjdk（试过能启动tomcat啊）那就省事了。<br>基于服务器系统没有任何jdk和jre前提下，官网下载对应的jdk<br>网上很多做法卸载open jdk安装oracle jdk<br>本地下载或者服务器wget后通过</p>
 <blockquote>
 <p>rpm -ivh 包名安装<br>通过javac 和 java -version验证安装成功与否。</p>
 </blockquote>
 <p>一般安装的基本不用配置环境变量也能使用。（反正我没配置）</p>
-<p>3.安装tomcat</p>
+<p><strong>3.安装tomcat</strong></p>
 <p>由于是linux平台直接选择tar.gz下载了。</p>
 <blockquote>
 <p>tar -xvf apa*</p>
 </blockquote>
-<p>重命名为tomcat</p>
-<p>进入bin目录，启动tomcat</p>
+<p>重命名为tomcat<br>进入bin目录，启动tomcat</p>
 <blockquote>
 <p>./startup.sh</p>
 </blockquote>
@@ -252,7 +246,7 @@
 </blockquote>
 <p>进行安装<br>进一步优化可以使用nginx反向代理，具体自己查找了（以下为使用了nginx）<br>当JPress安装完毕后，访问</p>
 <blockquote>
-<p><a href="http://yoursite.com/admin" target="_blank" rel="external">http://yoursite.com/admin</a><br>（本地：<br><a href="http://127.0.0.1/admin" target="_blank" rel="external">http://127.0.0.1/admin</a><br>）</p>
+<p><a href="http://yoursite.com/admin" target="_blank" rel="external">http://yoursite.com/admin</a><br>本地：<br><a href="http://127.0.0.1/admin" target="_blank" rel="external">http://127.0.0.1/admin</a></p>
 </blockquote>
 <p>输入安装配置的账号密码，即可进入管理后台。<br>完工</p>
 
