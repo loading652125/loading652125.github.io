@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ldrtech.cn">
-  <title>Category: 文章 | ldrtech blog</title>
+  <title>个人博客网站（使用jpress） | ldrtech blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小黑屋博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ldrtech blog">
-<meta property="og:url" content="http://ldrtech.cn/categories/文章/index.html">
+  <meta name="description" content="原文发表：2017-02-01我为什么使用jpress（jfinal）而不使用wordpress（php）。wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了jpress githubJPress，一个wordpress的java代替版本，使用JFina">
+<meta name="keywords" content="吐槽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客网站（使用jpress）">
+<meta property="og:url" content="http://ldrtech.cn/2017/04/23/jpress/index.html">
 <meta property="og:site_name" content="ldrtech blog">
-<meta property="og:description" content="小黑屋博客">
+<meta property="og:description" content="原文发表：2017-02-01我为什么使用jpress（jfinal）而不使用wordpress（php）。wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了jpress githubJPress，一个wordpress的java代替版本，使用JFina">
+<meta property="og:updated_time" content="2017-04-23T02:36:27.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ldrtech blog">
-<meta name="twitter:description" content="小黑屋博客">
+<meta name="twitter:title" content="个人博客网站（使用jpress）">
+<meta name="twitter:description" content="原文发表：2017-02-01我为什么使用jpress（jfinal）而不使用wordpress（php）。wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了jpress githubJPress，一个wordpress的java代替版本，使用JFina">
   
     <link rel="alternative" href="/atom.xml" title="ldrtech blog" type="application/atom+xml">
   
@@ -150,36 +152,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jpress" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/20/new/" class="archive-article-date">
-  	<time datetime="2017-04-20T07:44:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/20/new/">博客更新</a>
+    <h1 class="article-title" itemprop="name">
+      个人博客网站（使用jpress）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/23/jpress/" class="archive-article-date">
+  	<time datetime="2017-04-23T02:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文发表：2017-02-01<br>我为什么使用jpress（jfinal）而不使用wordpress（php）。<br>wordpress给我最大的感受就是卡，网上优化做法也使用过，没办法还是没办法忍受。<br>思来想去还是觉得换个平台好一点，刚好接触过一点点的java web。网上给jpress的评价也很高，那好就是你了<br>jpress github<br>JPress，一个wordpress的java代替版本，使用JFinal开发。支持类似wordpress的几乎所有功能，比如：模板，插件等。同时在模板上，JPress提出了“模板即模型”的概念，方便模板制作人灵活制作业务模型，移除了widget等繁杂功能，同时在模板和插件制作上比wordpress更加灵活简洁。<br>官方简介使用一大堆，但是我只是想单纯搭个博客先，所以直接下载war包。<br>根据最简单的原则，需要有以下环境</p>
+<p>tomcat</p>
+<p>mysql（mariadb）</p>
+<p>jdk<br>基于平台centos7.2</p>
+<p>1.数据库，安装MariaDB</p>
+<p>安装命令</p>
+<p>yum -y install mariadb mariadb-server<br>安装完成MariaDB，首先启动MariaDB</p>
+<p>systemctl start mariadb<br>设置开机启动</p>
+<p>systemctl enable mariadb<br>接下来进行MariaDB的相关简单配置</p>
+<p>mysql_secure_installation<br>首先是设置密码，会提示先输入密码</p>
+<p>Enter current password for root (enter for none):&lt;–初次运行直接回车</p>
+<p>设置密码</p>
+<p>Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车<br>New password: &lt;– 设置root用户的密码<br>Re-enter new password: &lt;– 再输入一次你设置的密码</p>
+<p>其他配置</p>
+<p>Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车</p>
+<p>Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车,</p>
+<p>Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车</p>
+<p>Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车</p>
+<p>初始化MariaDB完成，接下来测试登录</p>
+<p>mysql -uroot -p你的密码<br>完成。</p>
+<p>2.安装jdk</p>
+<p>如果自身有openjdk（试过能启动tomcat啊）那就省事了。</p>
+<p>基于服务器系统没有任何jdk和jre前提下，官网下载对应的jdk</p>
+<p>网上很多做法卸载open jdk安装oracle jdk</p>
+<p>本地下载或者服务器wget后通过</p>
+<p>rpm -ivh 包名安装<br>通过javac 和 java -version验证安装成功与否。</p>
+<p>一般安装的基本不用配置环境变量也能使用。（反正我没配置）</p>
+<p>3.安装tomcat</p>
+<p>由于是linux平台直接选择tar.gz下载了。</p>
+<p>tar -xvf apa*<br>重命名为tomcat</p>
+<p>进入bin目录，启动tomcat</p>
+<p>./startup.sh<br>通过访问127.0.0.1:8080（本地）或者域名:8080（服务器）查看运行正常否</p>
+<p>服务器需要防火墙开放8080端口</p>
+<p>具体查看firewalld（centos7.0）和iptables（centos6.0）的开放方法</p>
+<p>基本配置后可以把前面下载war包放到webapps目录下，重启tomcat（先shutdown.sh再startup.sh），自动解压war包</p>
+<p>为jpress文件夹。</p>
+<p>通过访问127.0.0.1:8080/jpress（本地）或者域名:8080/jpress（服务器）进行安装</p>
+<p>进一步优化可以使用nginx反向代理，具体自己查找了（以下为使用了nginx）</p>
+<p>当JPress安装完毕后，访问<br><a href="http://yoursite.com/admin" target="_blank" rel="external">http://yoursite.com/admin</a><br>（本地：<br><a href="http://127.0.0.1/admin" target="_blank" rel="external">http://127.0.0.1/admin</a><br>），输入安装配置的账号密码，即可进入管理后台。</p>
+<p>完工</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,30 +252,104 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章/" class="article-tag-list-link color3">文章</a>
+        			<a href="/categories/教程/" class="article-tag-list-link color3">教程</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://ldrtech.cn/2017/04/23/jpress/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/20/new/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          博客更新
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -237,10 +372,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
