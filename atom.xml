@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldrtech.cn/"/>
-  <updated>2017-04-23T04:41:33.294Z</updated>
+  <updated>2017-04-23T04:48:36.741Z</updated>
   <id>http://ldrtech.cn/</id>
   
   <author>
@@ -20,15 +20,10 @@
     <link href="http://ldrtech.cn/2017/04/23/tucao/"/>
     <id>http://ldrtech.cn/2017/04/23/tucao/</id>
     <published>2017-04-23T03:38:29.000Z</published>
-    <updated>2017-04-23T04:41:33.294Z</updated>
+    <updated>2017-04-23T04:48:36.741Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>原文发表：2017-02-10 </p>
-</blockquote>
-<p>原本是帮师姐（已毕业）搞office的问题，几番折腾后问题还是有，好气啊。（家里又没网，只是文字描述不出方法，远程又卡）<br>想想师姐这是要工作的，这么折腾不行啊。不如叫师姐去重装吧（反正win8.1给我印象不好）。<br>师姐也说好，想换win7</p>
-<p>可是吧！这过年期间我是没办法帮忙重装，又怕别人装的不好。所以吧我给出点要求吧，就是看看重装系统的人是什么水平。<br><img src="/2017/04/23/tucao/tucao1.png" alt="tucao1" title="tucao1"><br>我这有几个重点。</p>
-<blockquote>
-<p>师姐原来win8是我安装的<br>磁盘格式是gpt（uefi）<br>如果转mbr（加个如果是有道理的）<br>要原版镜像（iso文件）<br>不要ghost系统（gho文件）</p>
+<p>原文发表：2017-02-10<br>原本是帮师姐（已毕业）搞office的问题，几番折腾后问题还是有，好气啊。（家里又没网，只是文字描述不出方法，远程又卡）<br>想想师姐这是要工作的，这么折腾不行啊。不如叫师姐去重装吧（反正win8.1给我印象不好）。<br>师姐也说好，想换win7<br>可是吧！这过年期间我是没办法帮忙重装，又怕别人装的不好。所以吧我给出点要求吧，就是看看重装系统的人是什么水平。<br><img src="/2017/04/23/tucao/tucao1.png" alt="tucao1" title="tucao1"><br>我这有几个重点。<br>师姐原来win8是我安装的<br>磁盘格式是gpt（uefi）<br>如果转mbr（加个如果是有道理的）<br>要原版镜像（iso文件）<br>不要ghost系统（gho文件）</p>
 </blockquote>
 <p>然后师姐各种求助别人安装，终于有一个了。（皆大欢喜）<br>然后就是考验他到底会不会了<br><img src="/2017/04/23/tucao/tucao2.png" alt="tucao2" title="tucao2"><br>这里还没有问题。。继续看<br><img src="/2017/04/23/tucao/tucao3.png" alt="tucao3" title="tucao3"><br>这里可以隐约猜到没有使用过分区精灵。也说明他不懂分区（开始意识到这人可能不行）<br><img src="/2017/04/23/tucao/tucao5.png" alt="tucao5" title="tucao5"><br>你这动不动要格盘的，人家资料多，谁折腾的起<br><img src="/2017/04/23/tucao/tucao4.png" alt="tucao4" title="tucao4"><br>想看看能不能纠正他先</p>
 <p>大哥从你开始说方便快捷那一刻起，我基本确认你只会ghost方式还原系统，你对一个电脑小白上用ghost系统要命啊<br>无奈为了验证我的猜想，还是加个微信看看<br><img src="/2017/04/23/tucao/tucao6.png" alt="tucao6" title="tucao6"><br>还原对话</p>
@@ -51,9 +46,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;原文发表：2017-02-10 &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;原本是帮师姐（已毕业）搞office的问题，几番折腾后问题还是有，好气啊。（家里又没网，只是文字描述不出方法，远程又卡）&lt;br&gt;想想师姐这是要工作的，这么折腾不行啊。不如叫
+&lt;p&gt;原文发表：2017-02-10&lt;br&gt;原本是帮师姐（已毕业）搞office的问题，几番折腾后问题还是有，好气啊。（家里又没网，只是文字描述不出方法，远程又卡）&lt;br&gt;想想师姐这是要工作的，这么折腾不行啊。不如叫师姐去重装吧（反正win8.1给我印象
     
     </summary>
     
