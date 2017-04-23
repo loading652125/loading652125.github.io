@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://ldrtech.cn/2017/04/23/jpress/</loc>
+    <lastmod>2017-04-23T03:15:14.084Z</lastmod>
+    <data>
+        <display>
+        <title>个人博客网站（使用jpress）</title>
+        <pubTime>2017-04-23T02:34:31.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="教程" url="http://ldrtech.cn/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldrtech.cn/2017/04/20/new/</loc>
+    <lastmod>2017-04-23T02:35:11.769Z</lastmod>
+    <data>
+        <display>
+        <title>博客更新</title>
+        <pubTime>2017-04-20T07:44:33.000Z</pubTime>
+        
+        <tag>吐槽</tag>
+         
+         
+           
+             
+              <breadCrumb title="文章" url="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
