@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://ldrtech.cn">
   <title>i++和++i谁的效率高？ | ldrtech blog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。 C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的c">
+  <meta name="description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的cs">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="i++和++i谁的效率高？">
 <meta property="og:url" content="http://ldrtech.cn/2017/04/24/iQuestion/index.html">
 <meta property="og:site_name" content="ldrtech blog">
-<meta property="og:description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。 C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的c">
-<meta property="og:updated_time" content="2017-04-24T10:33:05.379Z">
+<meta property="og:description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的cs">
+<meta property="og:updated_time" content="2017-04-24T10:38:36.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="i++和++i谁的效率高？">
-<meta name="twitter:description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。 C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的c">
+<meta name="twitter:description" content="原文发表：2017-03-27   最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。为什么会想到这个问题？源于算法老师在上课提的问题，i++和++i谁的效率高？看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是搞哪出啊？后来说到翻译成汇编指令，故所以去网上搜索一波。C/C++面试题：i++与++i哪个效率更高？以上是来自debugconsole的cs">
   
     <link rel="alternative" href="/atom.xml" title="ldrtech blog" type="application/atom+xml">
   
@@ -188,18 +188,11 @@
         <blockquote>
 <p>原文发表：2017-03-27 </p>
 </blockquote>
-<p><em>最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。</em><br>为什么会想到这个问题？<br>源于算法老师在上课提的问题，i++和++i谁的效率高？<br>看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是<strong>搞哪出啊</strong>？<br>后来说到翻译成汇编指令，故所以去网上搜索一波。</p>
-<p>C/C++面试题：i++与++i哪个效率更高？<br><a href="http://blog.csdn.net/debugconsole/article/details/8058605" target="_blank" rel="external">以上是来自debugconsole的csdn博客</a></p>
-<p>摘抄如下<br>在这里声明，简单的比较前缀自增运算符和后缀自增运算符的效率是片面的，因为存在很多因素影响这个问题的答案。<br>首先考虑内建数据类型的情况：如果自增运算表达式的结果没有被使用，而是仅仅简单的用于增加一员操作数，<br>答案是明确的，前缀法和后缀法没有任何区别，编译器的处理都应该是相同的，很难想象得出有什么编译器实现可以别出心裁在二者之间制造任何差异。<br>我们看看下面这个程序：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#include </span></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> x = <span class="number">0</span>;   </div><div class="line">    i++;</div><div class="line">    ++i;</div><div class="line">    x = i++;</div><div class="line">    x = ++i;   </div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><em>最近没有码博客，前两星期回家了，加上有点慢，最近把文章都补上。</em><br>为什么会想到这个问题？<br>源于算法老师在上课提的问题，i++和++i谁的效率高？<br>看到这个问题我也是一脸懵逼，QAQ当年视频不是说纠结前++和后加加没啥必要吗，这是<strong>搞哪出啊</strong>？<br>后来说到翻译成汇编指令，故所以去网上搜索一波。<br>C/C++面试题：i++与++i哪个效率更高？<br><a href="http://blog.csdn.net/debugconsole/article/details/8058605" target="_blank" rel="external">以上是来自debugconsole的csdn博客</a><br>摘抄如下<br>在这里声明，简单的比较前缀自增运算符和后缀自增运算符的效率是片面的，因为存在很多因素影响这个问题的答案。<br>首先考虑内建数据类型的情况：如果自增运算表达式的结果没有被使用，而是仅仅简单的用于增加一员操作数，<br>答案是明确的，前缀法和后缀法没有任何区别，编译器的处理都应该是相同的，很难想象得出有什么编译器实现可以别出心裁在二者之间制造任何差异。<br>我们看看下面这个程序：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#include </span></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> x = <span class="number">0</span>;   </div><div class="line">    i++;</div><div class="line">    ++i;</div><div class="line">    x = i++;</div><div class="line">    x = ++i;   </div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上面的代码在VC 6.0上编译得到的汇编如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">; Line 5</div><div class="line">        mov        DWORD PTR _i$[ebp], 0</div><div class="line">; Line 6</div><div class="line">        mov        DWORD PTR _x$[ebp], 0</div><div class="line">; Line 8</div><div class="line">        mov        eax, DWORD PTR _i$[ebp]</div><div class="line">        add        eax, 1</div><div class="line">        mov        DWORD PTR _i$[ebp], eax</div><div class="line">; Line 9</div><div class="line">        mov        ecx, DWORD PTR _i$[ebp]</div><div class="line">        add        ecx, 1</div><div class="line">        mov        DWORD PTR _i$[ebp], ecx</div><div class="line">; Line 10</div><div class="line">        mov        edx, DWORD PTR _i$[ebp]</div><div class="line">        mov        DWORD PTR _x$[ebp], edx</div><div class="line">        mov        eax, DWORD PTR _i$[ebp]</div><div class="line">        add        eax, 1</div><div class="line">        mov        DWORD PTR _i$[ebp], eax</div><div class="line">; Line 11</div><div class="line">        mov        ecx, DWORD PTR _i$[ebp]</div><div class="line">        add        ecx, 1</div><div class="line">        mov        DWORD PTR _i$[ebp], ecx</div><div class="line">        mov        edx, DWORD PTR _i$[ebp]</div><div class="line">        mov        DWORD PTR _x$[ebp], edx</div></pre></td></tr></table></figure></p>
 <ul>
 <li>代码段第8行和第9行生成的汇编代码分别对应Line 8和Line 9下对应的汇编代码，可以看到三个步骤几乎完全一样。</li>
-<li>代码段第10行和第11行生成的汇编代码分别对应Line 10和Line 11下对应的汇编代码，可以看到都是五个步骤，只是在加1的先后顺序上有一些区别，效率也是完全一样的。</li>
-</ul>
-<p>由此说明，考虑内建数据类型时，它们的效率差别不大（去除编译器优化的影响）。所以在这种情况下我们大可不必关心。<br>现在让我们再考虑自定义数据类型（主要是指类）的情况。此时我们不需要再做很多汇编代码的分析了，因为前缀式（++i）可以返回对象的引用，</p>
-<p>而后缀式（i++）必须产生一个临时对象保存更改前对象的值并返回(实现过自定义类型++运算符定义的就知道)，所以导致在大对象的时候产生了较大的复制开销，</p>
-<p>引起效率降低，因此处理使用者自定义类型（注意不是指内建类型）的时候，应该尽可能的使用前缀式地增/递减，因为他天生体质较佳。<br>答案：</p>
-<ul>
+<li>代码段第10行和第11行生成的汇编代码分别对应Line 10和Line 11下对应的汇编代码，可以看到都是五个步骤，只是在加1的先后顺序上有一些区别，效率也是完全一样的。<br>由此说明，考虑内建数据类型时，它们的效率差别不大（去除编译器优化的影响）。所以在这种情况下我们大可不必关心。<br>现在让我们再考虑自定义数据类型（主要是指类）的情况。此时我们不需要再做很多汇编代码的分析了，因为前缀式（++i）可以返回对象的引用，<br>而后缀式（i++）必须产生一个临时对象保存更改前对象的值并返回(实现过自定义类型++运算符定义的就知道)，所以导致在大对象的时候产生了较大的复制开销，<br>引起效率降低，因此处理使用者自定义类型（注意不是指内建类型）的时候，应该尽可能的使用前缀式地增/递减，因为他天生体质较佳。<br>答案：</li>
 <li>内建数据类型的情况，效率没有区别。</li>
 <li>自定义数据类型的情况，++i效率较高。</li>
 </ul>
@@ -395,11 +388,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重装</a>
+                <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
+                <a href="javascript:void(0)" class="js-tag color3">重装</a>
               </li>
             
             <div class="clearfix"></div>
