@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://ldrtech.cn/2017/04/24/AndroidQuestion/index.html">
 <meta property="og:site_name" content="ldrtech blog">
 <meta property="og:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式  解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;g">
-<meta property="og:updated_time" content="2017-04-24T10:52:04.787Z">
+<meta property="og:updated_time" content="2017-04-24T12:47:21.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android小知识集合">
 <meta name="twitter:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式  解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;g">
@@ -190,6 +190,39 @@
 </ul>
 <p>解决方法<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar.FullScreen"</span> <span class="attr">parent</span>=<span class="string">"@style/Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowContentOverlay"</span>&gt;</span>@null<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <hr>
+<ul>
+<li>SharedPreference.Editor的apply和commit方法异同</li>
+</ul>
+<p>SharedPreferences.Editor官方文档apply方法</p>
+<blockquote>
+<p>Commit your preferences changes back from this Editor to the SharedPreferences object it is editing. This atomically performs the requested modifications, replacing whatever is currently in the SharedPreferences.</p>
+<p>Note that when two editors are modifying preferences at the same time, the last one to call apply wins.</p>
+<p>Unlike commit(), which writes its preferences out to persistent storage synchronously, apply() commits its changes to the in-memory SharedPreferences immediately but starts an asynchronous commit to disk and you won’t be notified of any failures. If another editor on this SharedPreferences does a regular commit() while a apply() is still outstanding, the commit() will block until all async commits are completed as well as the commit itself.</p>
+<p>As SharedPreferences instances are singletons within a process, it’s safe to replace any instance of commit() with apply() if you were already ignoring the return value.</p>
+<p>You don’t need to worry about Android component lifecycles and their interaction with apply() writing to disk. The framework makes sure in-flight disk writes from apply() complete before switching states.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>The SharedPreferences.Editor interface isn’t expected to be implemented directly. However, if you previously did implement it and are now getting errors about missing apply(), you can simply call commit() from apply().</p>
+</blockquote>
+<p>Google翻译</p>
+<blockquote>
+<p>将您的首选项从本编辑器提交到正在编辑的SharedPreferences对象。这原子地执行请求的修改，替换当前在SharedPreferences中的任何内容。</p>
+<p>请注意，当两个编辑器同时修改首选项时，最后一个调用应用胜利。</p>
+<p>与commit（）一样，它将其优先级同步写入永久存储器，apply（）将立即将其更改提交给内存中的SharedPreferences，但是会启动到磁盘的异步提交，并且不会收到任何失败的通知。如果这个SharedPreferences上的另一个编辑器在apply（）仍然未完成时执行常规commit（），则commit（）将阻塞，直到所有异步提交完成以及提交本身。</p>
+<p>由于SharedPreferences实例是一个进程中的单例，如果您已经忽略了返回值，那么可以使用apply（）替换任何commit（）实例。</p>
+<p>您不必担心Android组件生命周期及其与apply（）写入磁盘的交互。该框架确保在开关状态之前，从apply（）完成的空中磁盘写入。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>SharedPreferences.Editor接口不期望直接实现。但是，如果您以前已经实现了它，并且现在收到有关缺少apply（）的错误，可以直接从apply（）调用commit（）。</p>
+</blockquote>
+<ul>
+<li>apply没有返回值而commit返回boolean表明修改是否提交成功 </li>
+<li>apply是将修改数据原子提交到内存, 而后异步真正提交到硬件磁盘, 而commit是同步的提交到硬件磁盘，因此，在多个并发的提交commit的时候，他们会等待正在处理的commit保存到磁盘后在操作，从而降低了效率。而apply只是原子的提交到内容，后面有调用apply的函数的将会直接覆盖前面的内存数据，这样从一定程度上提高了很多效率。 </li>
+<li>apply方法不会提示任何失败的提示。 </li>
+<li>由于在一个进程中，sharedPreference是单实例，一般不会出现并发冲突，如果对提交的结果不关心的话，建议使用apply，当然需要确保提交成功且有后续操作的话，还是需要用commit的。</li>
+</ul>
       
 
       
@@ -391,15 +424,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">重装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
             
             <div class="clearfix"></div>
