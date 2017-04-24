@@ -182,14 +182,18 @@
 </blockquote>
 <p><strong>温馨提示，这里很无聊。</strong></p>
 <h2 id="winpe"><a href="#winpe" class="headerlink" title="winpe"></a>winpe</h2><blockquote>
-<p>Windows 预安装环境 (Windows PE) 是在 Windows 内核上构建的具有有限服务的最小 Win32 子系统，它用于为安装 Windows 而准备计算机，以便从网络文件服务器复制磁盘映像并启动 Windows 安装程序。（说白了就是个简单的windows操作系统）<br>常见的winpe有老毛桃、大白菜（基本带有后门，修改主页或强制加软件，不推荐不推荐不推荐，重要说三遍），当然也有没有后门绿色的pe（找找总是有的）<br><img src="/2017/04/24/reinstall2/reinstall21.png" alt="reinstall21" title="reinstall21"><br>上图一个绿色版pe</p>
+<p>Windows 预安装环境 (Windows PE) 是在 Windows 内核上构建的具有有限服务的最小 Win32 子系统，它用于为安装 Windows 而准备计算机，以便从网络文件服务器复制磁盘映像并启动 Windows 安装程序。（说白了就是个简单的windows操作系统）<br>常见的winpe有老毛桃、大白菜（基本带有后门，修改主页或强制加软件，不推荐不推荐不推荐，重要说三遍），当然也有没有后门绿色的pe（找找总是有的）</p>
 </blockquote>
+<img src="/2017/04/24/reinstall2/reinstall21.png" alt="reinstall21" title="reinstall21">
+<p>上图一个绿色版pe</p>
 <h2 id="系统镜像（要安装的东西）"><a href="#系统镜像（要安装的东西）" class="headerlink" title="系统镜像（要安装的东西）"></a>系统镜像（要安装的东西）</h2><p>系统镜像分两种</p>
 <ol>
 <li>是原装系统（以iso文件的后缀）</li>
-<li>是封装系统（gho文件的后缀，但大多的加入winpe再封装为iso文件） </li>
+<li>是封装系统（gho文件的后缀，但大多的加入winpe再封装为iso文件）<br>原装镜像的最正规下载地址时msdn<img src="/2017/04/24/reinstall2/reinstall22.png" alt="reinstall22" title="reinstall22">
+gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho镜像对磁盘来说是不好的，而且容易加入<strong>后门</strong>（换个说法就是系统管理员永远不是你自己）<img src="/2017/04/24/reinstall2/reinstall23.png" alt="reinstall23" title="reinstall23">
+<img src="/2017/04/24/reinstall2/reinstall24.png" alt="reinstall24" title="reinstall24">
+好处与坏处</li>
 </ol>
-<p>原装镜像的最正规下载地址时msdn<br><img src="/2017/04/24/reinstall2/reinstall22.png" alt="reinstall22" title="reinstall22"><br>gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho镜像对磁盘来说是不好的，而且容易加入<strong>后门</strong>（换个说法就是系统管理员永远不是你自己）<br><img src="/2017/04/24/reinstall2/reinstall23.png" alt="reinstall23" title="reinstall23"><br><img src="/2017/04/24/reinstall2/reinstall24.png" alt="reinstall24" title="reinstall24"><br>好处与坏处</p>
 <ul>
 <li>原装系统的好处：微软亲儿子，没有修改，纯净</li>
 <li>原装系统的坏处：后期处理比较麻烦（驱动，软件）</li>
@@ -202,13 +206,13 @@
 <p>推荐就是<strong>使用原装系统</strong>，自己的电脑自己管理</p>
 <hr>
 <p><em>以下三个属于比较难和需要时间来看的东西，这里知识简单说说，详细的还是需要谷歌百度。</em></p>
+<hr>
 <h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>磁盘分区表格式可以分为两种，mbr和gpt磁盘（后者较为新）</p>
 <blockquote>
 <p>主引导记录（Master Boot Record，缩写：MBR），又叫做主引导扇区，是计算机开机后访问硬盘时所必须要读取的首个扇区，它在硬盘上的三维地址为（柱面，磁头，扇区）＝（0，0，1）。在深入讨论主引导扇区内部结构的时候，有时也将其开zc头的446字节内容特指为“主引导记录”（MBR），其后是4个16字节的“磁盘分区表”（DPT），以及2字节的结束标志（55AA）。因此，在使用“主引导记录”（MBR）这个术语的时候，需要根据具体情况判断其到底是指整个主引导扇区，还是主引导扇区的前446字节。</p>
 <p>主引导扇区记录着硬盘本身的相关信息以及硬盘各个分区的大小及位置信息，是数据信息的重要入口。如果它受到破坏，硬盘上的基本数据结构信息将会丢失，需要用繁琐的方式试探性的重建数据结构信息后才可能重新访问原先的数据。主引导扇区内的信息可以通过任何一种基于某种操作系统的分区工具软件写入，但和某种操作系统没有特定的关系，即只要创建了有效的主引导记录就可以引导任意一种操作系统（操作系统是创建在高级格式化的硬盘分区之上，是和一定的文件系统相联系的）。<br>上面看不懂很正常（搜索出的专业文字）</p>
 </blockquote>
-<p>mbr磁盘有主分区，扩展分区，逻辑分区的区别</p>
-<p>Mbr磁盘支持2t以下的磁盘</p>
+<p>mbr磁盘有主分区，扩展分区，逻辑分区的区别<br>Mbr磁盘支持2t以下的磁盘</p>
 <p>可以有4个主分区，其中一个主分区必须为激活分区（常说的C盘），可以划分为三个主分区和一个扩展分区(相当于扩展分区为主分区，一个磁盘只能有一个扩展分区)，扩展分区相当于一个包含体，在扩展分区中可以划分为无数个逻辑分区。</p>
 <p>在xp和win7中mbr磁盘通常分为一个主分区（C盘）加一个扩展分区（其中再分三个逻辑分区（d，e，f盘））<br><img src="/2017/04/24/reinstall2/reinstall25.png" alt="reinstall25" title="reinstall25"><br> 上图mbr磁盘</p>
 <blockquote>
@@ -221,8 +225,10 @@
 <p>我们主要是为了能去bios设置参数，需要一定发英语知识。了解bios主要是为了设置启动模式（传统兼容启动这类的），启动顺序（决定什么硬件优先被引导启动，比如先U盘再磁盘）</p>
 <p>进入bios的方式一般开机有显示按什么键位，或者可以谷歌百度自己机型加bios<br>bios版本有什么多，中文英文也有，一般了解一种后其他都能使用<br>bios是很基础的部分，操作需要谨慎<br>多去搜索和操作才能真正了解</p>
 <h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><blockquote>
-<p>新型UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。<br>可扩展固件接口（Extensible Firmware Interface，EFI）是 Intel 为 PC 固件的体系结构、接口和服务提出的建议标准。其主要目的是为了提供一组在 OS 加载之前（启动前）在所有平台上一致的、正确指定的启动服务，被看做是有近20多年历史的 BIOS 的继任者。UEFI是由EFI1.10为基础发展起来的，它的所有者已不再是Intel，而是一个称作Unified EFI Form的国际组织。<br><img src="/2017/04/24/reinstall2/reinstall28.png" alt="reinstall28" title="reinstall28"><br>（图侵删）</p>
+<p>新型UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。<br>可扩展固件接口（Extensible Firmware Interface，EFI）是 Intel 为 PC 固件的体系结构、接口和服务提出的建议标准。其主要目的是为了提供一组在 OS 加载之前（启动前）在所有平台上一致的、正确指定的启动服务，被看做是有近20多年历史的 BIOS 的继任者。UEFI是由EFI1.10为基础发展起来的，它的所有者已不再是Intel，而是一个称作Unified EFI Form的国际组织。</p>
 </blockquote>
+<img src="/2017/04/24/reinstall2/reinstall28.png" alt="reinstall28" title="reinstall28">
+<p>（图侵删）</p>
       
 
       
