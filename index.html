@@ -161,7 +161,61 @@
             <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-reinstall3" class="article article-type-post article-index" itemscope itemprop="blogPost">
+            <article id="post-HorseStep" class="article article-type-post article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/HorseStep/">马踏棋盘算法（骑士周游问题）</a>
+    </h1>
+        
+        <a href="/2017/04/24/HorseStep/" class="archive-article-date">
+  	<time datetime="2017-04-24T09:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>原文发表：2017-02-22</p>
+</blockquote>
+<p>1.国际象棋的棋盘为8*8的方格棋盘。现将”马”放在任意指定的方格中，按照”马”走棋的规则将”马”进行移动。要求每个方格只能进入一次，最终使得”马”走遍棋盘的64个方格。<br>2.马的行走方式为“日”<br><img src="/2017/04/24/HorseStep/HorseStep1.jpg" alt="HorseStep1" title="HorseStep1"></p>
+<blockquote>
+<p>哈密顿图（英语：Hamiltonian path，或Traceable path）是一个无向图，由天文学家哈密顿提出，由指定的起点前往指定的终点，途中经过所有其他节点且只经过一次。在图论中是指含有哈密顿回路的图，闭合的哈密顿路径称作哈密顿回路（Hamiltonian cycle），含有图中所有顶的路径称作哈密顿路径。</p>
+</blockquote>
+<p>哈密尔顿图的定义： G=(V,E)是一个图，若G中一条通路通过每一个顶点一次且仅一次，称这条通路为哈密尔顿通路。若G中一个圈通过每一个顶点一次且仅一次，称这个圈为哈密尔顿圈。若一个图存在哈密尔顿圈，就称为哈密尔顿图</p>
+<p>使用java编写如下，使用递归和深度遍历<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HorseStep</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> X = <span class="number">8</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> Y = <span class="number">8</span>;</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 棋盘初始化</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> chess[][] = <span class="keyword">new</span> <span class="keyword">int</span>[X][Y];</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 打印棋盘</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; X; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; Y; j++) &#123;</div><div class="line">				<span class="keyword">if</span>(chess[i][j] &lt; <span class="number">10</span>)&#123;</div><div class="line">					System.out.print(chess[i][j]+<span class="string">"    "</span>);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">else</span>&#123;</div><div class="line">					System.out.print(chess[i][j]+<span class="string">"   "</span>);</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 下一个位置</div><div class="line">	 * 找到基于马当前在棋盘中的位置的(x,y)坐标的下一个可走的位置的坐标，如果成功找到则返回1，</div><div class="line">	 * 且直接修改原来位置的坐标，否则返回0 </div><div class="line">	 * 成功找到的条件是该位置存在且还没有被马走过</div><div class="line">	 * @param xy：当前马所在棋盘位置的x，y坐标 </div><div class="line">	 * @param count：不考虑边缘的情况，马在任意一位置的下一个位置都可能有八种情况，</div><div class="line">	 * count就是对这八种情况进行判断</div><div class="line">	 * 只要找到其中一种就返回1 </div><div class="line">	 */</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">nextXy</span><span class="params">(XY xy,<span class="keyword">int</span> count)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> x = xy.getX();</div><div class="line">		<span class="keyword">int</span> y = xy.getY();</div><div class="line">		<span class="keyword">int</span> nextEnable = <span class="number">0</span>;</div><div class="line">		</div><div class="line">		<span class="keyword">switch</span>(count)&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 从右上开始查找</div><div class="line">		 */</div><div class="line">			<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">				<span class="keyword">if</span>( x+<span class="number">1</span>&lt;=X-<span class="number">1</span> &amp;&amp; y-<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; chess[x+<span class="number">1</span>][y-<span class="number">2</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x +=<span class="number">1</span>;  </div><div class="line">	                y -=<span class="number">2</span>;</div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">				<span class="keyword">if</span>( x+<span class="number">2</span>&lt;=X-<span class="number">1</span> &amp;&amp; y-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; chess[x+<span class="number">2</span>][y-<span class="number">1</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x +=<span class="number">2</span>;  </div><div class="line">	                y -=<span class="number">1</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">				<span class="keyword">if</span>( x+<span class="number">2</span>&lt;=X-<span class="number">1</span> &amp;&amp; y+<span class="number">1</span>&lt;=Y-<span class="number">1</span> &amp;&amp; chess[x+<span class="number">2</span>][y+<span class="number">1</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x +=<span class="number">2</span>;  </div><div class="line">	                y +=<span class="number">1</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">				<span class="keyword">if</span>( x+<span class="number">1</span>&lt;=X-<span class="number">1</span> &amp;&amp; y+<span class="number">2</span>&lt;=Y-<span class="number">1</span> &amp;&amp; chess[x+<span class="number">1</span>][y+<span class="number">2</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x +=<span class="number">1</span>;  </div><div class="line">	                y +=<span class="number">2</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">				<span class="keyword">if</span>( x-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">2</span>&lt;=Y-<span class="number">1</span> &amp;&amp; chess[x-<span class="number">1</span>][y+<span class="number">2</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x -=<span class="number">1</span>;  </div><div class="line">	                y +=<span class="number">2</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">				<span class="keyword">if</span>( x-<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">1</span>&lt;=Y-<span class="number">1</span> &amp;&amp; chess[x-<span class="number">2</span>][y+<span class="number">1</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x -=<span class="number">2</span>;  </div><div class="line">	                y +=<span class="number">1</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">				<span class="keyword">if</span>( x-<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; y-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; chess[x-<span class="number">2</span>][y-<span class="number">1</span>]==<span class="number">0</span>)&#123;  </div><div class="line">		            x -=<span class="number">2</span>;  </div><div class="line">		            y -=<span class="number">1</span>;  </div><div class="line">		            nextEnable = <span class="number">1</span>;  </div><div class="line">		        &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">7</span>:</div><div class="line">				<span class="keyword">if</span>( x-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; y-<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; chess[x-<span class="number">1</span>][y-<span class="number">2</span>]==<span class="number">0</span>)&#123;  </div><div class="line">	                x -=<span class="number">1</span>;  </div><div class="line">	                y -=<span class="number">2</span>;  </div><div class="line">	                nextEnable = <span class="number">1</span>;  </div><div class="line">	            &#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">default</span>:</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 如果下个点可以达，则修改x，y的值</div><div class="line">		 */</div><div class="line">		<span class="keyword">if</span>(nextEnable == <span class="number">1</span>) &#123;</div><div class="line">			xy.setX(x);</div><div class="line">			xy.setY(y);</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 深度优先遍历棋盘</div><div class="line">	 * @param x：当前马即将要走的位置的x坐标 </div><div class="line">	 * @param y：当前马即将要走的位置的y坐标 </div><div class="line">	 * @param tag：当前马即将要走的这个位置是第tag步，也就是说马已经走过了step-1个棋盘  </div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">TravelChessBoard</span><span class="params">(XY xy,<span class="keyword">int</span> tag)</span></span>&#123;</div><div class="line">		<span class="comment">// flag保存是否有下一个可走的位置；count用于循环判断八种可走的位置  </span></div><div class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> flag = <span class="number">0</span>;</div><div class="line">		</div><div class="line">		<span class="comment">//保存马即将要走的这个位置的坐标 </span></div><div class="line">		<span class="keyword">int</span> x = xy.getX();  </div><div class="line">        <span class="keyword">int</span> y = xy.getY();</div><div class="line">        </div><div class="line">        <span class="comment">//标记该位置已经走过了 </span></div><div class="line">        chess[x][y] = tag;</div><div class="line">        </div><div class="line">        <span class="comment">//如果此时tag等于棋盘格子的个数，则说明已经把棋盘的每一个格子都走过一次了  </span></div><div class="line">        <span class="comment">// 则打印棋盘输出走过的顺序；递归的返回条件  </span></div><div class="line">        <span class="keyword">if</span> (X*Y == tag) &#123;</div><div class="line">			print();</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 如果还没有走完棋盘，则选择下一个位置，依次判断那八种可能的情况 </span></div><div class="line">        flag = nextXy(xy, count);</div><div class="line">        <span class="keyword">while</span> (<span class="number">0</span> == flag &amp;&amp; count&lt;<span class="number">8</span>) &#123;</div><div class="line">			count++;</div><div class="line">			flag = nextXy(xy, count);</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 在当前位置找到下一个可走的位置 </span></div><div class="line">        <span class="keyword">while</span> (flag == <span class="number">1</span>) &#123;</div><div class="line">        	<span class="comment">/*</span></div><div class="line">        	 * 递归调用走向下一个位置，因为在nextXy函数中直接修改了当前位置的坐标，</div><div class="line">        	 * 所以此时的x和y就表示下一个可走位置的坐标</div><div class="line">        	 * 如果此时返回的是1，说明棋盘已经走完了，继续向上返回1</div><div class="line">        	 */</div><div class="line">        	   </div><div class="line">			<span class="keyword">if</span> (TravelChessBoard(xy, tag+<span class="number">1</span>) == <span class="number">1</span>) &#123;</div><div class="line">				<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="comment">//返回的不是1，则返回上一个位置，在上一个位置重新选择一个可走位置继续</span></div><div class="line">			xy.setX(x);</div><div class="line">			xy.setY(y);</div><div class="line">			<span class="comment">// 前count种可走位置的情况都判断过了，从count+1种情况继续判断 </span></div><div class="line">			count++;</div><div class="line">			flag = nextXy(xy, count);</div><div class="line">			<span class="keyword">while</span> (<span class="number">0</span> == flag &amp;&amp; count&lt;<span class="number">7</span>) &#123;</div><div class="line">				count++;</div><div class="line">				flag = nextXy(xy, count);</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">        <span class="comment">// 八种可能的情况都判断过了，还是没有下一个可走的位置了  </span></div><div class="line">        <span class="comment">// 那么说明该次深度遍历失败，此种走法不行，则应该从当前位置回退到上一个位置  </span></div><div class="line">        <span class="comment">// 所以重新标记当前位置还没有被走过</span></div><div class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</div><div class="line">			chess[x][y] = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">        <span class="comment">// 如果都没有可走的位置了，则返回0，代表继续向后回退 </span></div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">long</span> begin =System.currentTimeMillis();</div><div class="line">		XY xy = <span class="keyword">new</span> XY();</div><div class="line">		<span class="comment">//开始棋盘点</span></div><div class="line">		xy.setX(<span class="number">0</span>);</div><div class="line">		xy.setY(<span class="number">0</span>);</div><div class="line">		<span class="keyword">if</span> (TravelChessBoard(xy, <span class="number">1</span>) == <span class="number">0</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"马踏棋盘失败"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">long</span> usedTime = System.currentTimeMillis() - begin;</div><div class="line">		System.out.println(<span class="string">"耗时"</span>+(usedTime/<span class="number">1000.0</span>)+<span class="string">"秒"</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * 构建棋盘点</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XY</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> x;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.x = x;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> y;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setY</span><span class="params">(<span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.y = y;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>运行结果<br><img src="/2017/04/24/HorseStep/HorseStep2.png" alt="HorseStep2" title="HorseStep2"></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法/" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/HorseStep/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+  
+    <article id="post-reinstall3" class="article article-type-post article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -327,94 +381,9 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
   </div>
 </article>
   
-    <article id="post-reinstall1" class="article article-type-post article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/24/reinstall1/">重装系统篇之能优化不重装</a>
-    </h1>
-        
-        <a href="/2017/04/24/reinstall1/" class="archive-article-date">
-  	<time datetime="2017-04-24T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原文发表：2017-02-11</p>
-</blockquote>
-<p>大二写过一篇重装系统的文档，还没写完整。搬上来看看。小白文档，大神勿吐槽。<br>为何重装原因如下</p>
-<ol>
-<li>系统要升级（比方从win7升级到win8或win10） </li>
-<li>系统崩溃了</li>
-<li>中了病毒杀不了（格了重装）</li>
-<li>重装系统成自娱自乐的乐趣</li>
-<li>修复缺失的系统文件</li>
-</ol>
-<p><strong>好处</strong>:就是运行快，系统稳定，用起来舒服！<br><strong>坏处</strong>:就是反复地格式磁盘对硬盘不好！  需要重新安装驱动，软件</p>
-<p>没必要重装的情况<br>对于一有问题就说要重装的说话时非常错误的，完全可以通过优化来完善系统</p>
-<ol>
-<li>电脑中毒     完全可以通过杀毒软件来清理</li>
-<li>系统卡     可以通过第三方优化软件(如CCleaner)</li>
-<li>网络出问题  可以360网络急救箱</li>
-<li>系统引导不成功，黑屏错误代码     可以pe修复</li>
-<li>等等</li>
-</ol>
-<p>我的世界观中对于能不重装就不重装，来说说别人说自己电脑卡的时候怎么来优化</p>
-<p><strong>优化</strong><br>主要分为卸载多余软件和清理垃圾和禁用无用开机引导服务</p>
-<h2 id="1-卸载多余软件"><a href="#1-卸载多余软件" class="headerlink" title="1.卸载多余软件"></a>1.卸载多余软件</h2><p>没错我说的不是别的，多余软件一般指的是<strong>管家和杀毒软件</strong>。</p>
-<p>经常看妹子电脑都有电脑管家和杀毒（卧槽。就4g的小运存，占用率60-70%了）</p>
-<p>真真问到为什么要装管家的时候，我听到最多的就是清理垃圾（杀鸡用牛刀）</p>
-<p>其实一个管家，一个杀毒本身就是一个占据Cpu、内存资源的软件，尤其处理某些场景是，发现异常卡顿<br>其实对于电脑日常场景来说，是不必需要杀毒</p>
-<p>win8和win10本身是自带杀毒软件（可能有人自己还不知道）</p>
-<p>浏览正规网页和下载文件（自己留意是不会问题）。。。。至于浏览不可描述，那就不是讨论范围了<br>大多数浏览器都支持扩展程序（无疑广告屏蔽是首先）</p>
-<p>有人跟我说过，其实你把杀毒卸载半年后重新安装杀毒也是会发现没有一个病毒</p>
-<h2 id="2-清理垃圾"><a href="#2-清理垃圾" class="headerlink" title="2.清理垃圾"></a>2.清理垃圾</h2><p>清理垃圾不用特意安装个管家，把清理垃圾的软件提取出来不就行了<br>我经常使用的是cclean和金山毒霸垃圾清理单文件版<br>有空清下就好那种（基本两个月都没一次）<br><img src="/2017/04/24/reinstall1/reinstall1.png" alt="reinstall1" title="reinstall1"></p>
-<p>##3.禁用无用开机引导服务 ##<br>这年头是个电脑软件都想自启动，要不加个服务<br>win8和win10系统中的任务管理器都可以禁用自启<br>也可以使用cclean<br><img src="/2017/04/24/reinstall1/reinstall2.png" alt="reinstall2" title="reinstall2"><br>到这里说自己电脑卡的就可以稍微流畅点了。那就完了</p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">重装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-      <div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程/" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/24/reinstall1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
           </div>
         </div>
@@ -499,11 +468,11 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重装</a>
+                <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
+                <a href="javascript:void(0)" class="js-tag color3">重装</a>
               </li>
             
             <div class="clearfix"></div>
