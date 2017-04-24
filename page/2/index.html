@@ -167,7 +167,70 @@
             <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HorseStep" class="article article-type-post article-index" itemscope itemprop="blogPost">
+            <article id="post-Hanoi" class="article article-type-post article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/Hanoi/">汉诺塔java实现</a>
+    </h1>
+        
+        <a href="/2017/04/24/Hanoi/" class="archive-article-date">
+  	<time datetime="2017-04-24T10:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>原文2017-03-05</p>
+</blockquote>
+<p>汉诺塔，维基百科解释如下</p>
+<blockquote>
+<p>最早发明这个问题的人是法国数学家爱德华·卢卡斯。<br>传说印度某间寺院有三根柱子，上串64个金盘。寺院里的僧侣依照一个古老的预言，以上述规则移动这些盘子；预言说当这些盘子移动完毕，世界就会灭亡。这个传说叫做梵天寺之塔问题(Tower of Brahma puzzle)。但不知道是卢卡斯自创的这个传说，还是他受他人启发。<br>若传说属实，僧侣们需要264 − 1步才能完成这个任务；若他们每秒可完成一个盘子的移动，就需要5849亿年才能完成。整个宇宙现在也不过137亿年。</p>
+</blockquote>
+<img src="/2017/04/24/Hanoi/hanoi1.jpg" alt="hanoi1" title="hanoi1">
+<p>问题描述如下</p>
+<ul>
+<li>A塔上有N个盘，并且盘从上到下依次增大，需要把A塔上的所有盘移动到C塔上，大盘不能在小盘上面。</li>
+<li>假设从上到下的序号为1.2.3.4….n</li>
+<li>如果A上有一个盘，则把1盘直接从A塔移动到C塔上。</li>
+<li>如果A上有两个盘，则把1盘从A塔移动到B塔上，把2盘从A塔移动到C塔上，然后把1盘从B塔移动到C塔上。</li>
+<li>如果A上有三个盘，则把1盘从A塔移动到C塔上，把2盘从A塔移动到B塔上，然后把1盘从C塔移动到B塔上，然后把3盘从A塔移动到C塔上，把1盘从B塔移动到A塔上，然后把2盘从B塔移动到C塔上。</li>
+<li>归纳为如果为一个盘，直接从A或B塔移动到C塔上，如果有n个盘，先把n-1个盘从A塔借助C塔移动到B塔，把最底下的n那一个盘移动到C塔，再把n-1个盘从B塔借助A塔移动到C塔。<br>算法总结：递归调用n-1个盘的移动，直到n为1。</li>
+</ul>
+<p>java代码<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import java.io.BufferedReader;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStreamReader;</div><div class="line"></div><div class="line">public <span class="keyword">class</span> Hanoi &#123;</div><div class="line">    /  定义移动方法</div><div class="line">       @param topN上方N个盘</div><div class="line">       @param from 初始的塔，开始移动的地方</div><div class="line">       @param inter中间的塔，借助移动的地方</div><div class="line">       @param to目标的塔，要移动到的地方</div><div class="line">     */</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> move(<span class="keyword">int</span> topN, <span class="keyword">char</span> from, <span class="keyword">char</span> inter, <span class="keyword">char</span> to) &#123;</div><div class="line">        <span class="keyword">if</span> (topN == <span class="number">1</span>) &#123;</div><div class="line">            System.out.println(<span class="string">"盘 1从"</span> + from + <span class="string">"移动 "</span> + to);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 递归调用</span></div><div class="line">            move(topN - <span class="number">1</span>, from, to, inter);</div><div class="line">            System.out.println(<span class="string">"盘 "</span> + topN + <span class="string">"从 "</span> + from + <span class="string">"移动 "</span> + to);</div><div class="line">            move(topN - <span class="number">1</span>, inter, from, to);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) throws NumberFormatException, IOException &#123;</div><div class="line">        System.out.println(<span class="string">"输入汉诺塔的层数"</span>);</div><div class="line">        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));</div><div class="line">        <span class="keyword">int</span> n = Integer.parseInt(reader.readLine());</div><div class="line">        <span class="comment">// 塔分别为 A，B，C</span></div><div class="line">        move(n, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>结果如下<br>3个盘<br><img src="/2017/04/24/Hanoi/hanoi2.png" alt="hanoi2" title="hanoi2"><br>5个盘<br><img src="/2017/04/24/Hanoi/hanoi3.png" alt="hanoi3" title="hanoi3"></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法/" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/Hanoi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+  
+    <article id="post-HorseStep" class="article article-type-post article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -281,112 +344,6 @@
   </div>
 </article>
   
-    <article id="post-reinstall2" class="article article-type-post article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/24/reinstall2/">重装系统篇之重装基础知识</a>
-    </h1>
-        
-        <a href="/2017/04/24/reinstall2/" class="archive-article-date">
-  	<time datetime="2017-04-24T08:25:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原文发表：2017-02-11</p>
-</blockquote>
-<p><strong>温馨提示，这里很无聊。</strong></p>
-<h2 id="winpe"><a href="#winpe" class="headerlink" title="winpe"></a>winpe</h2><blockquote>
-<p>Windows 预安装环境 (Windows PE) 是在 Windows 内核上构建的具有有限服务的最小 Win32 子系统，它用于为安装 Windows 而准备计算机，以便从网络文件服务器复制磁盘映像并启动 Windows 安装程序。（说白了就是个简单的windows操作系统）<br>常见的winpe有老毛桃、大白菜（基本带有后门，修改主页或强制加软件，不推荐不推荐不推荐，重要说三遍），当然也有没有后门绿色的pe（找找总是有的）</p>
-</blockquote>
-<img src="/2017/04/24/reinstall2/reinstall21.png" alt="reinstall21" title="reinstall21">
-<p>上图一个绿色版pe</p>
-<h2 id="系统镜像（要安装的东西）"><a href="#系统镜像（要安装的东西）" class="headerlink" title="系统镜像（要安装的东西）"></a>系统镜像（要安装的东西）</h2><p>系统镜像分两种</p>
-<ol>
-<li>是原装系统（以iso文件的后缀）</li>
-<li>是封装系统（gho文件的后缀，但大多的加入winpe再封装为iso文件）<br>原装镜像的最正规下载地址时msdn<img src="/2017/04/24/reinstall2/reinstall22.png" alt="reinstall22" title="reinstall22">
-gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho镜像对磁盘来说是不好的，而且容易加入<strong>后门</strong>（换个说法就是系统管理员永远不是你自己）<img src="/2017/04/24/reinstall2/reinstall23.png" alt="reinstall23" title="reinstall23">
-<img src="/2017/04/24/reinstall2/reinstall24.png" alt="reinstall24" title="reinstall24">
-好处与坏处</li>
-</ol>
-<ul>
-<li>原装系统的好处：微软亲儿子，没有修改，纯净</li>
-<li>原装系统的坏处：后期处理比较麻烦（驱动，软件）</li>
-</ul>
-<p>gho系统</p>
-<ul>
-<li>好处:重装系统快，第三方驱动整合，集成必要软件</li>
-<li>坏处：驱动不是特有，可能添加后门，磁盘伤害等等</li>
-</ul>
-<p>推荐就是<strong>使用原装系统</strong>，自己的电脑自己管理</p>
-<hr>
-<p><em>以下三个属于比较难和需要时间来看的东西，这里知识简单说说，详细的还是需要谷歌百度。</em></p>
-<hr>
-<h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>磁盘分区表格式可以分为两种，mbr和gpt磁盘（后者较为新）</p>
-<blockquote>
-<p>主引导记录（Master Boot Record，缩写：MBR），又叫做主引导扇区，是计算机开机后访问硬盘时所必须要读取的首个扇区，它在硬盘上的三维地址为（柱面，磁头，扇区）＝（0，0，1）。在深入讨论主引导扇区内部结构的时候，有时也将其开zc头的446字节内容特指为“主引导记录”（MBR），其后是4个16字节的“磁盘分区表”（DPT），以及2字节的结束标志（55AA）。因此，在使用“主引导记录”（MBR）这个术语的时候，需要根据具体情况判断其到底是指整个主引导扇区，还是主引导扇区的前446字节。</p>
-<p>主引导扇区记录着硬盘本身的相关信息以及硬盘各个分区的大小及位置信息，是数据信息的重要入口。如果它受到破坏，硬盘上的基本数据结构信息将会丢失，需要用繁琐的方式试探性的重建数据结构信息后才可能重新访问原先的数据。主引导扇区内的信息可以通过任何一种基于某种操作系统的分区工具软件写入，但和某种操作系统没有特定的关系，即只要创建了有效的主引导记录就可以引导任意一种操作系统（操作系统是创建在高级格式化的硬盘分区之上，是和一定的文件系统相联系的）。<br>上面看不懂很正常（搜索出的专业文字）</p>
-</blockquote>
-<p>mbr磁盘有主分区，扩展分区，逻辑分区的区别<br>Mbr磁盘支持2t以下的磁盘</p>
-<p>可以有4个主分区，其中一个主分区必须为激活分区（常说的C盘），可以划分为三个主分区和一个扩展分区(相当于扩展分区为主分区，一个磁盘只能有一个扩展分区)，扩展分区相当于一个包含体，在扩展分区中可以划分为无数个逻辑分区。</p>
-<p>在xp和win7中mbr磁盘通常分为一个主分区（C盘）加一个扩展分区（其中再分三个逻辑分区（d，e，f盘））<br><img src="/2017/04/24/reinstall2/reinstall25.png" alt="reinstall25" title="reinstall25"><br> 上图mbr磁盘</p>
-<blockquote>
-<p>局唯一标识分区表（GUID Partition Table，缩写：GPT）是一个实体硬盘的分区表的结构布局的标准。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，被用于替代BIOS系统中的一32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表。对于那些扇区为512字节的磁盘，MBR分区表不支持容量大于2.2TB（2.2 × 1012字节）[1]的分区，然而，一些硬盘制造商（诸如希捷和西部数据）注意到这个局限性，并且将他们的容量较大的磁盘升级到4KB的扇区，这意味着MBR的有效容量上限提升到16 TiB。 这个看似“正确的”解决方案，在临时地降低人们对改进磁盘分配表的需求的同时，也给市场带来关于在有较大的块(block)的设备上从BIOS启动时，如何最佳的划分磁盘分区的困惑。GPT分配64bits给逻辑块地址，因而使得最大分区大小在264-1个扇区成为可能。对于每个扇区大小为512字节的磁盘，那意味着可以有9.4ZB(9.4 x 1021字节)或8 ZiB 个512字节（9,444,732,965,739,290,426,880字节 或 18,446,744,073,709,551,615（264-1）个扇区 x 512（29）字节每扇区）[1][2]。<br>gpt没有主扩展区别，所有分区都是主分区</p>
-</blockquote>
-<p>gpt磁盘结构<br><img src="/2017/04/24/reinstall2/reinstall26.png" alt="reinstall26" title="reinstall26"></p>
-<h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><blockquote>
-<p>BIOS（Basic Input/Output System的缩写、中文：基本输入输出系统），在IBM PC兼容系统上，是一种业界标准的固件界面。[1]。BIOS这个字眼是在1975年第一次由CP/M操作系统中出现。BIOS是个人电脑启动时加载的第一个软件。<br>BIOS用于电脑开机时运行系统各部分的的自我检测(Power On Self Test)，并加载引导程序(IPL)或存储在主存的作业系统。此外，BIOS还向作业系统提供一些系统参数。系统硬件的变化是由BIOS隐藏，程序使用BIOS功能而不是直接控制硬件。<br>现在新的笔记本电脑一般常见到系微bios<br></p>
-</blockquote>
-<p>我们主要是为了能去bios设置参数，需要一定发英语知识。了解bios主要是为了设置启动模式（传统兼容启动这类的），启动顺序（决定什么硬件优先被引导启动，比如先U盘再磁盘）</p>
-<p>进入bios的方式一般开机有显示按什么键位，或者可以谷歌百度自己机型加bios<br>bios版本有什么多，中文英文也有，一般了解一种后其他都能使用<br>bios是很基础的部分，操作需要谨慎<br>多去搜索和操作才能真正了解</p>
-<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><blockquote>
-<p>新型UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。<br>可扩展固件接口（Extensible Firmware Interface，EFI）是 Intel 为 PC 固件的体系结构、接口和服务提出的建议标准。其主要目的是为了提供一组在 OS 加载之前（启动前）在所有平台上一致的、正确指定的启动服务，被看做是有近20多年历史的 BIOS 的继任者。UEFI是由EFI1.10为基础发展起来的，它的所有者已不再是Intel，而是一个称作Unified EFI Form的国际组织。</p>
-</blockquote>
-<img src="/2017/04/24/reinstall2/reinstall28.png" alt="reinstall28" title="reinstall28">
-<p>（图侵删）</p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">重装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-      <div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程/" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/24/reinstall2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -472,6 +429,10 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吐槽</a>

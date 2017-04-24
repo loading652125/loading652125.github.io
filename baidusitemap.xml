@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://ldrtech.cn/2017/04/24/AndroidQuestion/</loc>
+    <lastmod>2017-04-24T10:52:04.787Z</lastmod>
+    <data>
+        <display>
+        <title>Android小知识集合</title>
+        <pubTime>2017-04-24T10:49:16.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="文章" url="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ldrtech.cn/2017/04/24/daodan/</loc>
-    <lastmod>2017-04-24T10:44:34.582Z</lastmod>
+    <lastmod>2017-04-24T10:47:29.756Z</lastmod>
     <data>
         <display>
         <title>蓝桥杯导弹拦截（动态规划）</title>
