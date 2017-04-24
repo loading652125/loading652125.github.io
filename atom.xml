@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldrtech.cn/"/>
-  <updated>2017-04-24T08:04:31.665Z</updated>
+  <updated>2017-04-24T08:13:41.930Z</updated>
   <id>http://ldrtech.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ldrtech.cn/2017/04/24/reinstall1/"/>
     <id>http://ldrtech.cn/2017/04/24/reinstall1/</id>
     <published>2017-04-24T07:47:30.000Z</published>
-    <updated>2017-04-24T08:04:31.665Z</updated>
+    <updated>2017-04-24T08:13:41.930Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>原文发表：2017-02-11</p>
@@ -51,12 +51,8 @@
 <p>win8和win10本身是自带杀毒软件（可能有人自己还不知道）</p>
 <p>浏览正规网页和下载文件（自己留意是不会问题）。。。。至于浏览不可描述，那就不是讨论范围了<br>大多数浏览器都支持扩展程序（无疑广告屏蔽是首先）</p>
 <p>有人跟我说过，其实你把杀毒卸载半年后重新安装杀毒也是会发现没有一个病毒</p>
-<h2 id="2-清理垃圾"><a href="#2-清理垃圾" class="headerlink" title="2.清理垃圾"></a>2.清理垃圾</h2><p>清理垃圾不用特意安装个管家，把清理垃圾的软件提取出来不就行了</p>
-<p>我经常使用的是cclean和金山毒霸垃圾清理单文件版</p>
-<p>有空清下就好那种（基本两个月都没一次）<br><img src="/2017/04/24/reinstall1/reinstall1.png" alt="reinstall1" title="reinstall1"></p>
-<p>##3.禁用无用开机引导服务 ##<br>这年头是个电脑软件都想自启动，要不加个服务</p>
-<p>win8和win10系统中的任务管理器都可以禁用自启</p>
-<p>也可以使用cclean<br><img src="/2017/04/24/reinstall1/reinstall2.png" alt="reinstall2" title="reinstall2"><br>到这里说自己电脑卡的就可以稍微流畅点了。那就完了</p>]]></content>
+<h2 id="2-清理垃圾"><a href="#2-清理垃圾" class="headerlink" title="2.清理垃圾"></a>2.清理垃圾</h2><p>清理垃圾不用特意安装个管家，把清理垃圾的软件提取出来不就行了<br>我经常使用的是cclean和金山毒霸垃圾清理单文件版<br>有空清下就好那种（基本两个月都没一次）<br><img src="/2017/04/24/reinstall1/reinstall1.png" alt="reinstall1" title="reinstall1"></p>
+<p>##3.禁用无用开机引导服务 ##<br>这年头是个电脑软件都想自启动，要不加个服务<br>win8和win10系统中的任务管理器都可以禁用自启<br>也可以使用cclean<br><img src="/2017/04/24/reinstall1/reinstall2.png" alt="reinstall2" title="reinstall2"><br>到这里说自己电脑卡的就可以稍微流畅点了。那就完了</p>]]></content>
     
     <summary type="html">
     
