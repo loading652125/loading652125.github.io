@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://ldrtech.cn">
   <title>Android小知识集合 | ldrtech blog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式  解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;g">
+  <meta name="description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;gt;">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android小知识集合">
 <meta property="og:url" content="http://ldrtech.cn/2017/04/24/AndroidQuestion/index.html">
 <meta property="og:site_name" content="ldrtech blog">
-<meta property="og:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式  解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;g">
-<meta property="og:updated_time" content="2017-04-24T12:47:21.759Z">
+<meta property="og:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;gt;">
+<meta property="og:updated_time" content="2017-05-02T15:24:05.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android小知识集合">
-<meta name="twitter:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式  解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;g">
+<meta name="twitter:description" content="V7包中的Theme.AppCompat主题系列中并没有全屏样式解决方法123456&amp;lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;@style/Theme.AppCompat.Light&quot;&amp;gt;    &amp;lt;item name=&quot;windowNoTitle&quot;&amp;gt;true&amp;lt;/item&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="ldrtech blog" type="application/atom+xml">
   
@@ -185,15 +185,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>V7包中的Theme.AppCompat主题系列中并没有全屏样式</li>
-</ul>
-<p>解决方法<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar.FullScreen"</span> <span class="attr">parent</span>=<span class="string">"@style/Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowContentOverlay"</span>&gt;</span>@null<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        <h2 id="V7包中的Theme-AppCompat主题系列中并没有全屏样式"><a href="#V7包中的Theme-AppCompat主题系列中并没有全屏样式" class="headerlink" title="V7包中的Theme.AppCompat主题系列中并没有全屏样式"></a>V7包中的Theme.AppCompat主题系列中并没有全屏样式</h2><p>解决方法<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar.FullScreen"</span> <span class="attr">parent</span>=<span class="string">"@style/Theme.AppCompat.Light"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowContentOverlay"</span>&gt;</span>@null<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <hr>
-<ul>
-<li>SharedPreference.Editor的apply和commit方法异同</li>
-</ul>
-<p>SharedPreferences.Editor官方文档apply方法</p>
+<h2 id="SharedPreference-Editor的apply和commit方法异同"><a href="#SharedPreference-Editor的apply和commit方法异同" class="headerlink" title="SharedPreference.Editor的apply和commit方法异同"></a>SharedPreference.Editor的apply和commit方法异同</h2><p>SharedPreferences.Editor官方文档apply方法</p>
 <blockquote>
 <p>Commit your preferences changes back from this Editor to the SharedPreferences object it is editing. This atomically performs the requested modifications, replacing whatever is currently in the SharedPreferences.</p>
 <p>Note that when two editors are modifying preferences at the same time, the last one to call apply wins.</p>
@@ -340,6 +334,11 @@
     </a>
   
   
+    <a href="/2017/05/02/AppIntro/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开源库AppIntro</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
           </div>
         </div>
@@ -424,15 +423,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">重装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
             
             <div class="clearfix"></div>
