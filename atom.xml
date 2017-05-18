@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldrtech.cn/"/>
-  <updated>2017-05-03T03:12:27.712Z</updated>
+  <updated>2017-05-18T15:05:00.843Z</updated>
   <id>http://ldrtech.cn/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google I/O 2017总结</title>
+    <link href="http://ldrtech.cn/2017/05/18/Google2017/"/>
+    <id>http://ldrtech.cn/2017/05/18/Google2017/</id>
+    <published>2017-05-18T13:45:07.000Z</published>
+    <updated>2017-05-18T15:05:00.843Z</updated>
+    
+    <content type="html"><![CDATA[<p>分享音乐</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=439915614&auto=0&height=66"></iframe>
+
+
+<p>由于学校晚上断网原因，晚上没能去看直播，毕竟不能错过啊。<br>早上打开爱奇艺会看，哇！！这翻译真的皮。听不下去了，<br>还是去了YouTube看无字幕，英语水平还是有点呛。（总结之一，还是要好好学英语）<br><img src="/2017/05/18/Google2017/io1.png" alt="io1" title="io1"><br>（CEO很帅）<br>听后有这几个</p>
+<ul>
+<li>Google.ai 通过复杂的学习</li>
+<li>Google lens 拍摄加搜索</li>
+<li>Google home 上年开始有了，感觉改变不大</li>
+<li>Goolgle photos还是一如既往的强大，这次注重分享share，还能做出相册书记</li>
+<li>YouTube 没怎么关心</li>
+<li>vr/ar</li>
+</ul>
+<p>震撼时刻</p>
+<ul>
+<li>ai学习上下文语境（购买电影票），返回更好的搜索</li>
+<li>声音购买外卖</li>
+<li>图片像素处理和美化</li>
+</ul>
+<p>总结<br>复杂的机器学习<br>强大的App整合能力，搜索，翻译，photos，YouTube这些能充分融合一起（真是佩服）<br>机器学习和大数据还是重点（是不是以后向这里走）</p>
+<p>由于学Android，把Android放到最后，重点不多</p>
+<ul>
+<li>Android O还是更快了，每年都快</li>
+<li>Android studio 的 profilers（开发者福利）</li>
+<li>Data save </li>
+</ul>
+<p><strong>最最最重点</strong>还是Android 加入 Kotlin<br>这个是大事情啊，虽然说早就可以用Kotlin来写应用了，但是这次可是官方说的，言下之意就是 Kotlin 成为了 Android 的官方语言。我的心情极为复杂，该去看看了。<br><img src="/2017/05/18/Google2017/io2.png" alt="io2" title="io2"></p>
+<p>最后真的吐槽今年design了<br>哇Google你要干啥子，这material design要亡了？<br><img src="/2017/05/18/Google2017/io3.png" alt="io3" title="io3"><br>这啥子配色，这啥子设计，年年的模仿标本就这样le，各大商店都吐槽爆了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分享音乐&lt;/p&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/playe
+    
+    </summary>
+    
+      <category term="文章" scheme="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>开源库AppIntro</title>
