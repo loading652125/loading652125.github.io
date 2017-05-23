@@ -4,13 +4,53 @@
 
     
   <url>
+    <loc>http://ldrtech.cn/2017/05/22/CustomView1/</loc>
+    <lastmod>2017-05-23T13:11:28.103Z</lastmod>
+    <data>
+        <display>
+        <title>自定义View总结</title>
+        <pubTime>2017-05-22T14:09:46.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="文章" url="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ldrtech.cn/2017/05/18/Google2017/</loc>
-    <lastmod>2017-05-18T15:05:00.843Z</lastmod>
+    <lastmod>2017-05-23T04:15:51.802Z</lastmod>
     <data>
         <display>
         <title>Google I/O 2017总结</title>
         <pubTime>2017-05-18T13:45:07.000Z</pubTime>
         
+         
+           
+             
+              <breadCrumb title="文章" url="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ldrtech.cn/2017/05/02/AppIntro/</loc>
+    <lastmod>2017-05-23T04:15:44.887Z</lastmod>
+    <data>
+        <display>
+        <title>开源库AppIntro</title>
+        <pubTime>2017-05-02T15:23:44.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
          
            
              
@@ -28,26 +68,6 @@
         <display>
         <title>Android小知识集合</title>
         <pubTime>2017-04-24T10:49:16.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="文章" url="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ldrtech.cn/2017/05/02/AppIntro/</loc>
-    <lastmod>2017-05-03T03:12:27.712Z</lastmod>
-    <data>
-        <display>
-        <title>开源库AppIntro</title>
-        <pubTime>2017-05-02T15:23:44.000Z</pubTime>
         
         <tag>Android</tag>
          
