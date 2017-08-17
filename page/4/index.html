@@ -167,7 +167,67 @@
             <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-reinstall2" class="article article-type-post article-index" itemscope itemprop="blogPost">
+            <article id="post-reinstall3" class="article article-type-post article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/reinstall3/">重装系统篇之基本软件操作</a>
+    </h1>
+        
+        <a href="/2017/04/24/reinstall3/" class="archive-article-date">
+  	<time datetime="2017-04-24T09:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>原文发表：2017-02-12</p>
+</blockquote>
+<p>U盘来重装系统这个是重点，整个博客都是围绕U盘来重装，U盘类型包括（<em>普通U盘，读卡器加内存卡，外置磁盘，MP4等</em>）,只要是个外部存储器。<br>当然也有非U盘安装系统的，不介绍其他了，知识是通用的，相信会一种后其他也会。<br>前面一篇可能看的一头露水，这篇说说软件的操作</p>
+<h2 id="首先是UltraISO（软碟通）"><a href="#首先是UltraISO（软碟通）" class="headerlink" title="首先是UltraISO（软碟通）"></a>首先是UltraISO（软碟通）</h2><p>UltraISO的作用是刻录镜像到U盘，对于不支持uefi的电脑来说是有必要使用的，用来刻录pe或者系统镜像<br>一般说来对于用U盘来重装系统的，我推荐使用pe的方式，简单。对于支持uefi的电脑来说直接把镜像文件复制到U盘就可以不用刻录，这里针对不支持uefi的情况下。<br>具体操作（已刻录一个pe为例）<br>打开软件<br><img src="/2017/04/24/reinstall3/reinstall31.png" alt="reinstall3" title="reinstall3"><br>打开镜像文件<br><img src="/2017/04/24/reinstall3/reinstall321.png" alt="reinstall3" title="reinstall3"><br>选择文件<br><br>选择U盘，写入方式（一般写入方式bios都支持，默认就好），格式化（最好格式化），然后写入<br><img src="/2017/04/24/reinstall3/reinstall33.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/reinstall341.png" alt="reinstall3" title="reinstall3"><br>等待完成<br><img src="/2017/04/24/reinstall3/reinstall342.png" alt="reinstall3" title="reinstall3"><br>完工。这样一个可以启动的pe就完成了，只需要设置U盘启动就能看到一个简化的系统了，如果自己电脑不能启动也可以有个救命稻草了。</p>
+<h2 id="然后是分区管理diskgenius"><a href="#然后是分区管理diskgenius" class="headerlink" title="然后是分区管理diskgenius"></a>然后是分区管理diskgenius</h2><p>以下虚拟机操作<br>先是mbr磁盘操作<br><img src="/2017/04/24/reinstall3/mbr1.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr2.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr3.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr4.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr5.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr6.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/mbr7.png" alt="reinstall3" title="reinstall3"><br>然后gpt磁盘操作<br><img src="/2017/04/24/reinstall3/gpt1.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/gpt2.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/gpt3.png" alt="reinstall3" title="reinstall3"><br><img src="/2017/04/24/reinstall3/gpt4.png" alt="reinstall3" title="reinstall3"></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">重装</a>
+        		</li>
+      		
+		</ul>
+	</div>
+      <div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程/" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/reinstall3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+  
+    <article id="post-reinstall2" class="article article-type-post article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -358,75 +418,6 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
   </div>
 </article>
   
-    <article id="post-tucao" class="article article-type-post article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/23/tucao/">对一个计算机师兄重装系统的吐槽</a>
-    </h1>
-        
-        <a href="/2017/04/23/tucao/" class="archive-article-date">
-  	<time datetime="2017-04-23T03:38:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原文发表：2017-02-10 </p>
-</blockquote>
-<p>原本是帮师姐（已毕业）搞office的问题，几番折腾后问题还是有，好气啊。（家里又没网，只是文字描述不出方法，远程又卡）<br>想想师姐这是要工作的，这么折腾不行啊。不如叫师姐去重装吧（反正win8.1给我印象不好）。<br>师姐也说好，想换win7<br>可是吧！这过年期间我是没办法帮忙重装，又怕别人装的不好。所以吧我给出点要求吧，就是看看重装系统的人是什么水平。<br><img src="/2017/04/23/tucao/tucao1.png" alt="tucao1" title="tucao1"><br>我这有几个重点。</p>
-<blockquote>
-<p>师姐原来win8是我安装的<br>磁盘格式是gpt（uefi）<br>如果转mbr（加个如果是有道理的）<br>要原版镜像（iso文件）<br>不要ghost系统（gho文件）</p>
-</blockquote>
-<p>然后师姐各种求助别人安装，终于有一个了。（皆大欢喜）<br>然后就是考验他到底会不会了<br><img src="/2017/04/23/tucao/tucao2.png" alt="tucao2" title="tucao2"><br>这里还没有问题。。继续看<br><img src="/2017/04/23/tucao/tucao3.png" alt="tucao3" title="tucao3"><br>这里可以隐约猜到没有使用过分区精灵。也说明他不懂分区（开始意识到这人可能不行）<br><img src="/2017/04/23/tucao/tucao5.png" alt="tucao5" title="tucao5"><br>你这动不动要格盘的，人家资料多，谁折腾的起<br><img src="/2017/04/23/tucao/tucao4.png" alt="tucao4" title="tucao4"><br>想看看能不能纠正他先</p>
-<p>大哥从你开始说方便快捷那一刻起，我基本确认你只会ghost方式还原系统，你对一个电脑小白上用ghost系统要命啊<br>无奈为了验证我的猜想，还是加个微信看看<br><img src="/2017/04/23/tucao/tucao6.png" alt="tucao6" title="tucao6"><br>还原对话</p>
-<p>我：师兄，你在吗？</p>
-<p>他：在啊，不在怎么通过你的验证。（好吧，我承认我处于礼貌的傻逼）</p>
-<p>我：win8转7你是想怎么来的</p>
-<p>他：（粤语）win8装win7，直接转硬盘格式化咯（我的天，要命）</p>
-<p>他：将硬盘格式化后重新分区装系统（不错嘛，会分区，错怪了错怪了）</p>
-<p>我：你用啥ghost镜像(名字)   （猜透你）</p>
-<p>他：【图片】</p>
-<p>特意不压缩修改，看出几个重点<br><img src="/2017/04/23/tucao/tucao7.jpg" alt="tucao7" title="tucao7"></p>
-<ul>
-<li>大白菜pe</li>
-<li>ghost系统v5.5（看到有版本号，我的天）</li>
-</ul>
-<p>他自身电脑90%是这样装的，可能之前是win8的（我为啥知道，看到def盘是一键分区的我就能猜出来）<br>好吧我已经放弃你了<br><br>我：你浏览器主页被改了吧</p>
-<p>他：肯定要改啊（所问非所答）</p>
-<p>放弃了。赶紧叫师姐宁愿不装系统也别他来。这人没学到家，只是为了方便。<br><strong>为什么要吐槽？他要格盘憋！！</strong></p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      <div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/吐槽/" class="article-tag-list-link color3">吐槽</a>
-        		</li>
-      		
-		</ul>
-	</div>
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/23/tucao/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -518,11 +509,15 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重装</a>
+                <a href="javascript:void(0)" class="js-tag color3">实习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重装</a>
               </li>
             
             <div class="clearfix"></div>
@@ -597,7 +592,7 @@ gho封装镜像特别多，网上一搜一堆，尤其是xp和win7时代<br>gho�
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">zjs&lt;br&gt;&lt;br&gt;会重装，会刷机的Java程序员</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">会重装，会刷机的Java程序员，主修Android，目前是Java实习生</div>
   	  	
     	</section>
     

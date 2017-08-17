@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ldrtech.cn/"/>
-  <updated>2017-05-23T13:11:28.103Z</updated>
+  <updated>2017-08-17T12:50:03.065Z</updated>
   <id>http://ldrtech.cn/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实习总结</title>
+    <link href="http://ldrtech.cn/2017/08/17/intership1/"/>
+    <id>http://ldrtech.cn/2017/08/17/intership1/</id>
+    <published>2017-08-17T11:46:12.000Z</published>
+    <updated>2017-08-17T12:50:03.065Z</updated>
+    
+    <content type="html"><![CDATA[<p>分享歌曲</p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28952211&auto=0&height=66"></iframe><br>六月份时，拼命寻找实习工作结果发现学校大四一年实习这点确实令人无语，hr一看简历，普遍反映是你18年毕业怎么现在就找工作，真的学校再读半年也好啊。想想六月的大太阳到处跑，满心期待去到还是被打击，我们不招实习生之类的（真的是，不招你登啥信息在招聘网上，炸鱼啊）<br><img src="/2017/08/17/intership1/110.jpg" alt="110" title="110"><br>实习之前已经逐渐看见Android工作难找的信息，也意识到市场饱和的信息，但是觉得难于现在改变学习方向，还是坚持着学。<br>之后面试还是如下感受</p>
+<blockquote>
+<p>由于APP创业风口已过，大批创业公司死亡，导致了Android岗位减少；<br>一些公司并不需要一个Native的APP，他们只需要在APP中嵌入一个网页；<br>RN、Weex对Native概念的冲击</p>
+</blockquote>
+<p>最好还是来了索菲亚，当初不想来的原因还是因为太过于偏僻，空气真的有点感觉难受。<br>哇，第一天来的时候就被司机抛弃，居然载了会计妹子就跑了。<br><img src="/2017/08/17/intership1/sad.jpg" alt="sad" title="sad"><br>第一次到宿舍的时候真是崩溃，那哥们是开着空调抽烟的，宿舍的味道不谈了，之后也是因为空调漏水还是换了宿舍，之后的宿舍好多了。<br>第二天就说要培训两个月，之前以为是专业知识，毕竟进来的大多数学计算机相关专业的，反正没想到衣柜知识吧。<br>第一天学的时候真不清楚讲了啥，难受，没想到华软的那么多哥们先崩溃了，第二天就说走了（不怪他们，毕竟他们要大四回去写论文，现在必须从事相关专业）。</p>
+<p>之后学着发现还可以，还是待下了，还真很习惯（人的习惯性真是可怕）<br>前两天也领了人生的第一笔工资，也还有半个月就回部门，nice</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分享歌曲&lt;/p&gt;
+&lt;p&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/pl
+    
+    </summary>
+    
+      <category term="文章" scheme="http://ldrtech.cn/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="实习" scheme="http://ldrtech.cn/tags/%E5%AE%9E%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义View总结</title>
